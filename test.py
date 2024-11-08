@@ -20,7 +20,7 @@ payload = {
     "adults": 1,
     "children": 0,
     "infants": 0,
-    "cabinClass": "business",
+    "cabinClass": "economy",
     "stops": ["direct"],
     "sort": "cheapest_first",
     "flights": [{
