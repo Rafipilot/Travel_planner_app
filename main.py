@@ -3,6 +3,10 @@ import requests
 from openai import OpenAI
 from datetime import datetime
 
+from secret import openai_key
+from secret import rapidAPI_key
+
+
 st.set_page_config(layout="wide")
 
 def get_flight_price(departure, destination, depart_date, number_of_people):
@@ -11,7 +15,7 @@ def get_flight_price(departure, destination, depart_date, number_of_people):
 
     # Headers for API authentication
     headers = {
-        'x-rapidapi-key': "2a44a82b8cmsh488f974a35b410dp1ee6b4jsn541b54c4cb0a",
+        'x-rapidapi-key': rapidAPI_key,
         'x-rapidapi-host': "sky-scanner3.p.rapidapi.com",
         'Content-Type': "application/json"
     }
@@ -52,7 +56,7 @@ def get_flight_price(departure, destination, depart_date, number_of_people):
         st.error(f"Failed to retrieve data: {response.status_code}")
         return None, None
 
-client = OpenAI(api_key='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')
+client = OpenAI(api_key=openai_key)
 
 
 # Title of the app
